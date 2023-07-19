@@ -81,3 +81,13 @@ def write_free_seats():
     main_writer.penup()
     main_screen.tracer(True)
 
+# Function for drawing a place
+def draw_seat(x, y, color="steel blue"):
+    main_turtle.setposition(x, y)
+    main_turtle.pendown()
+    main_turtle.begin_fill()
+    main_turtle.circle(seat_radius)
+    main_turtle.fillcolor(color)
+    main_turtle.end_fill()
+    main_turtle.penup()
+
