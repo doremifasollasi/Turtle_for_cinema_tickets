@@ -9,3 +9,8 @@ SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 800
 HALL_HEADER = 150
 FONT_SIZE = 20
+
+# Number of rows and columns of seats in the hall
+ROW = 5
+COLUMN = 5
+
