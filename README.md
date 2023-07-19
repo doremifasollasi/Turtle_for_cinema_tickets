@@ -1,7 +1,7 @@
 # Turtle_for_cinema_tickets
-As part of the Python marathon from the GoIT company, I implemented a project to build a primitive display of a cinema on a computer screen using the Turtle library.
+## As part of the Python marathon from the GoIT company, I implemented a project to build a primitive display of a cinema on a computer screen using the Turtle library.
 
-#The basics of working with the Turtle module
+# The basics of working with the Turtle module
 The Python Turtle module is a library that provides the ability to create graphical images using a turtle. This is a convenient way to create various geometric shapes and animations.
 
 The Turtle module was created as a tool for teaching programming and providing interaction with a computer through visual images. With its help, you can create interesting and creative projects, as well as improve your Python programming skills.
