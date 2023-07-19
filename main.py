@@ -117,3 +117,35 @@ def unbook_seat(x, y):
             draw_seat(*seat_coord, color=color)
             write_free_seats()
 
+## This is where the final part of the code begins, where we draw the initial locations on the screen, 
+# add mouse click handlers, and start the main program loop with main_screen.mainloop().
+
+# These lines disable (False) and enable (True) the drawing animation. When the animation is off, 
+# we see instant drawing of all locations, with no delays.
+main_screen.tracer(False)
+
+# This is a loop that draws all the seats stored in the seats dictionary. 
+# We go through all seat coordinates and draw each seat using the draw_seat(*seat) function. 
+# We select each seat coordinate value and pass it as arguments to the draw_seat function. 
+# The draw_seat function draws a circle on the seat with the given color.
+for seat in seats:
+    draw_seat(*seat)
+main_screen.tracer(True)
+
+# This function displays the number of free seats and the number of sold seats. 
+# We call this function in the initial stage to display the number of free seats at the start of the program.
+write_free_seats()
+
+# This line adds a LMB (left mouse button) click handler to the main_screen window. 
+# The book_seat function will be called with each LMB click on the screen.
+main_screen.onclick(book_seat)
+
+# This line adds a right click handler to the main_screen window. 
+# The unbook_seat function will be called on each PCM click on the screen.
+main_screen.onscreenclick(unbook_seat, btn=3)  
+
+# This command starts the program's main loop, which waits for and processes events. 
+# When we click on a seat with the left or right mouse button, 
+# the corresponding book_seat or unbook_seat functions are called, 
+# changing the state of the seat and updating the screen display accordingly.
+main_screen.mainloop()
