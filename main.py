@@ -91,3 +91,10 @@ def draw_seat(x, y, color="steel blue"):
     main_turtle.end_fill()
     main_turtle.penup()
 
+# Function for determining the seat by cursor coordinates
+def get_seat(x, y):
+    for _x, _y in seats:
+        distance = ((x - _x)**2 + (y - (_y + seat_radius))**2)**0.5
+        if distance <= seat_radius:
+            return _x, _y
+
