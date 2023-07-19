@@ -98,3 +98,22 @@ def get_seat(x, y):
         if distance <= seat_radius:
             return _x, _y
 
+# A function for booking a seat with a left mouse button click
+def book_seat(x, y):
+    seat_coord = get_seat(x, y)
+    if seat_coord:
+        seats[seat_coord] = not seats[seat_coord]  # Change the state of the place when pressed
+        color = "tomato" if seats[seat_coord] else "steel blue"
+        draw_seat(*seat_coord, color=color)
+        write_free_seats()
+
+# The function of canceling seat reservations with the right mouse button
+def unbook_seat(x, y):
+    seat_coord = get_seat(x, y)
+    if seat_coord:
+        if seats[seat_coord]:
+            seats[seat_coord] = False  # Return the place to a free state
+            color = "steel blue"  # Return the color of the place to the original (blue)
+            draw_seat(*seat_coord, color=color)
+            write_free_seats()
+
