@@ -14,3 +14,9 @@ FONT_SIZE = 20
 ROW = 5
 COLUMN = 5
 
+# Create a Turtle screen with the specified parameters
+main_screen = Screen()
+main_screen.bgcolor("indigo")
+main_screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
+main_screen.setworldcoordinates(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+main_screen.title("Cinema")
