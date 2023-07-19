@@ -68,3 +68,16 @@ for r in range(ROW):
         x += cell_width
     x = cell_width / 2
     y += cell_height
+
+# Function for displaying information about free and reserved seats
+def write_free_seats():
+    main_screen.tracer(False)
+    main_writer.clear()
+    main_writer.setposition(10, SCREEN_HEIGHT - (FONT_SIZE * 2))
+    main_writer.pendown()
+    free_seats = len(seats.values()) - sum(seats.values())
+    solid_seats = sum(seats.values())
+    main_writer.write(f"Free: {free_seats}  Solid: {solid_seats}", font=("TimesNewRoman", FONT_SIZE, "bold"))
+    main_writer.penup()
+    main_screen.tracer(True)
+
