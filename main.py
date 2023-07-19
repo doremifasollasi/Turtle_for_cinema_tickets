@@ -37,9 +37,9 @@ main_turtle.penup()
 # Using separate objects allows us to control drawing and text output independently of each other. 
 # The corresponding settings (hideturtle(), speed(), penup()) help ensure more efficient use of objects depending on their purpose.
 
-## Create a shell object for text output.
-# main_writer is another shell object, but with a different purpose. 
-# It is used to display text on the screen. Normally, shells are used to draw graphic objects, 
+## Create a turtle object for text output.
+# main_writer is another turtle object, but with a different purpose. 
+# It is used to display text on the screen. Normally, turtles are used to draw graphic objects, 
 # but in this case, using main_writer, we can add text elements to our drawing. 
 # It also hides the turtle (hideturtle()), sets the maximum drawing speed (speed(0)), 
 # and raises the pen (penup()) so that the turtle doesn't leave a trail when it moves to a new position.
@@ -48,3 +48,23 @@ main_writer.hideturtle()
 main_writer.speed(0)
 main_writer.penup()
 
+# Calculate the dimensions of the places and the radius of each place
+cell_width = SCREEN_WIDTH / COLUMN
+cell_height = (SCREEN_HEIGHT - HALL_HEADER) / ROW
+
+seat_radius = (cell_height * 0.8) / 2
+
+# Initialize the initial coordinates of the places
+x = cell_width / 2
+y = (cell_height / 2) - seat_radius
+
+# Create a dictionary to save the state of places
+seats = {}
+
+# Fill the dictionary with initial values (all spaces are free)
+for r in range(ROW):
+    for c in range(COLUMN):
+        seats[(x, y)] = False
+        x += cell_width
+    x = cell_width / 2
+    y += cell_height
