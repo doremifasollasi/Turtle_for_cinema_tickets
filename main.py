@@ -4,4 +4,8 @@
 from turtle import Turtle, Screen
 
 
-
+# Constants for screen, title, and font sizes
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 800
+HALL_HEADER = 150
+FONT_SIZE = 20
